@@ -2,7 +2,7 @@
 
 #### 一.LINUX学习方向
 
-![](E:\学习\LINUX\IMAGES\1_1.png)
+![](E:\learning\LINUXLearning\IMAGES\1_1.png)
 
 
 
@@ -60,5 +60,17 @@
 
 3.Linux主要发行版本：Linux与Ubuntu、redhat等的关系：内核与应用
 
-![](E:\photoss\3_1.png)
+![](E:\learning\LINUXLearning\IMAGES\3_1.png)
+
+4.常见的操作系统：windows,linux,android
+
+
+
+#### 四.Linux与Unix的关系
+
+#### 五.windows与linux的关系
+
+![](E:\learning\LINUXLearning\IMAGES\5_1.png)
+
+
 
