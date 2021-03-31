@@ -2,7 +2,7 @@
 
 #### 一.LINUX学习方向
 
-![](E:\learning\LINUXLearning\IMAGES\1_1.png)
+![](.\IMAGES\1_1.png)
 
 
 
@@ -60,7 +60,7 @@
 
 3.Linux主要发行版本：Linux与Ubuntu、redhat等的关系：内核与应用
 
-![](E:\learning\LINUXLearning\IMAGES\3_1.png)
+![](.\IMAGES\3_1.png)
 
 4.常见的操作系统：windows,linux,android
 
@@ -70,7 +70,7 @@
 
 #### 五.windows与linux的关系
 
-![](E:\learning\LINUXLearning\IMAGES\5_1.png)
+![](.\IMAGES\5_1.png)
 
 
 
@@ -84,21 +84,21 @@
 
 3.关系图
 
-![](E:\learning\LINUXLearning\IMAGES\6_2.png)
+![](.\IMAGES\6_2.png)
 
 ##### 2.vm12和CentOS系统的安装
 
-![](E:\learning\LINUXLearning\IMAGES\6_3.png)
+![](.\IMAGES\6_3.png)
 
 ###### 1.vm12安装步骤
 
-![](E:\learning\LINUXLearning\IMAGES\6_4.png)
+![](.\IMAGES\6_4.png)
 
 进入BIOS设置虚拟化
 
 安装vm12步骤
 
-![](E:\learning\LINUXLearning\IMAGES\6_5.png)
+![](.\IMAGES\6_5.png)
 
 
 
@@ -108,25 +108,25 @@
 
 1.主页->创建新的虚拟机
 
-![](E:\learning\LINUXLearning\IMAGES\7_1.png)
+![](.\IMAGES\7_1.png)
 
-![](E:\learning\LINUXLearning\IMAGES\7_2.png)
+![](.\IMAGES\7_2.png)
 
-![](E:\learning\LINUXLearning\IMAGES\7_3.png)
+![](.\IMAGES\7_3.png)
 
-![](E:\learning\LINUXLearning\IMAGES\7_4.png)
+![](.\IMAGES\7_4.png)
 
-![](E:\learning\LINUXLearning\IMAGES\7_5.png)
+![](.\IMAGES\7_5.png)
 
-![](E:\learning\LINUXLearning\IMAGES\7_6.png)
+![](.\IMAGES\7_6.png)
 
-![](E:\learning\LINUXLearning\IMAGES\7_7.png)
+![](.\IMAGES\7_7.png)
 
-![](E:\learning\LINUXLearning\IMAGES\7_8.png)
+![](.\IMAGES\7_8.png)
 
-![](E:\learning\LINUXLearning\IMAGES\7_9.png)
+![](.\IMAGES\7_9.png)
 
-![](E:\learning\LINUXLearning\IMAGES\7_10.png)
+![](.\IMAGES\7_10.png)
 
 
 
@@ -136,11 +136,11 @@
 
 ​	桥接模式：同一个网络环境下，各个主机可以任意访问其他主机即其所有的虚拟机。好处：Linux可以和其他系统通信。弊端：容易出现IP地址冲突
 
-![](E:\learning\LINUXLearning\IMAGES\7_11.png)
+![](.\IMAGES\7_11.png)
 
 ​	NAT模式：母机双IP，母机不能与其他母机所有的Linux虚拟机通信，但母机所有的Linux虚拟机可以和其他母机通信，网络地址转换方式：Linux可以访问外网，不会造成IP冲突
 
-![](E:\learning\LINUXLearning\IMAGES\7_12.png)
+![](.\IMAGES\7_12.png)
 
 ​	主机模式：你的Linux 是一个独立的主机，不能访问外网
 
@@ -148,71 +148,71 @@
 
 2.开始安装系统(CentOS6.8)
 
-![](E:\learning\LINUXLearning\IMAGES\7_13.png)
+![](.\IMAGES\7_13.png)
 
-![](E:\learning\LINUXLearning\IMAGES\7_14.png)
+![](.\IMAGES\7_14.png)
 
-![](E:\learning\LINUXLearning\IMAGES\7_15.png)
+![](.\IMAGES\7_15.png)
 
-![](E:\learning\LINUXLearning\IMAGES\7_16.png)
+![](.\IMAGES\7_16.png)
 
-![](E:\learning\LINUXLearning\IMAGES\7_17.png)
+![](.\IMAGES\7_17.png)
 
-![](E:\learning\LINUXLearning\IMAGES\7_18.png)
+![](.\IMAGES\7_18.png)
 
-![](E:\learning\LINUXLearning\IMAGES\7_19.png)
+![](.\IMAGES\7_19.png)
 
-![](E:\learning\LINUXLearning\IMAGES\7_20.png)
+![](.\IMAGES\7_20.png)
 
-![](E:\learning\LINUXLearning\IMAGES\7_21.png)
+![](.\IMAGES\7_21.png)
 
-![](E:\learning\LINUXLearning\IMAGES\7_22.png)
+![](.\IMAGES\7_22.png)
 
-![](E:\learning\LINUXLearning\IMAGES\7_23.png)
+![](.\IMAGES\7_23.png)
 
-![](E:\learning\LINUXLearning\IMAGES\7_24.png)
+![](.\IMAGES\7_24.png)
 
-![](E:\learning\LINUXLearning\IMAGES\7_25.png)
+![](.\IMAGES\7_25.png)
 
-![](E:\learning\LINUXLearning\IMAGES\7_26.png)
+![](.\IMAGES\7_26.png)
 
-![](E:\learning\LINUXLearning\IMAGES\7_27.png)
+![](.\IMAGES\7_27.png)
 
-![](E:\learning\LINUXLearning\IMAGES\7_28.png)
+![](.\IMAGES\7_28.png)
 
-![](E:\learning\LINUXLearning\IMAGES\7_29.png)
+![](.\IMAGES\7_29.png)
 
 然后格式化，修改磁盘
 
-![](E:\learning\LINUXLearning\IMAGES\7_30.png)
+![](.\IMAGES\7_30.png)
 
-![](E:\learning\LINUXLearning\IMAGES\7_31.png)
+![](.\IMAGES\7_31.png)
 
-![](E:\learning\LINUXLearning\IMAGES\7_33.png)
+![](.\IMAGES\7_33.png)
 
-![](E:\learning\LINUXLearning\IMAGES\7_35.png)
+![](.\IMAGES\7_35.png)
 
-![](E:\learning\LINUXLearning\IMAGES\7_34.png)
+![](.\IMAGES\7_34.png)
 
-![](E:\learning\LINUXLearning\IMAGES\7_36.png)
+![](.\IMAGES\7_36.png)
 
-![](E:\learning\LINUXLearning\IMAGES\7_37.png)
+![](.\IMAGES\7_37.png)
 
-![](E:\learning\LINUXLearning\IMAGES\7_38.png)
+![](.\IMAGES\7_38.png)
 
 创建用户暂时先不创建，后面会单独创建，先使用root账户登录
 
 
 
-![](E:\learning\LINUXLearning\IMAGES\7_39.png)
+![](.\IMAGES\7_39.png)
 
-![](E:\learning\LINUXLearning\IMAGES\7_40.png)
+![](.\IMAGES\7_40.png)
 
-![](E:\learning\LINUXLearning\IMAGES\7_41.png)
+![](.\IMAGES\7_41.png)
 
-![](E:\learning\LINUXLearning\IMAGES\7_42.png)
+![](.\IMAGES\7_42.png)
 
-![](E:\learning\LINUXLearning\IMAGES\7_43.png)
+![](.\IMAGES\7_43.png)
 
 至此CentOS系统安装完成
 
@@ -228,19 +228,19 @@ Linux分区：
 
 1./boot分区：Linux在启动时会生成引导文件，默认放在boot分区内
 
-![](E:\learning\LINUXLearning\IMAGES\7_24.png)
+![](.\IMAGES\7_24.png)
 
 
 
 2.swap分区：交换分区，当系统内存不够用时，可用此分区替代内存
 
-![](E:\learning\LINUXLearning\IMAGES\7_27.png)
+![](.\IMAGES\7_27.png)
 
 3.根分区：/
 
-![](E:\learning\LINUXLearning\IMAGES\7_28.png)
+![](.\IMAGES\7_28.png)
 
-![](E:\learning\LINUXLearning\IMAGES\7_29.png)
+![](.\IMAGES\7_29.png)
 
 然后格式化，修改磁盘
 
@@ -248,11 +248,11 @@ Linux分区：
 
 ##### 1.对终端的使用
 
-![](E:\learning\LINUXLearning\IMAGES\7_44.png)
+![](.\IMAGES\7_44.png)
 
 2.配置联网
 
-![](E:\learning\LINUXLearning\IMAGES\8_1.png)
+![](.\IMAGES\8_1.png)
 
 #### 八.VMtool的使用和安装
 
@@ -262,7 +262,7 @@ vmtools:让我们在windows下更好的管理vm虚拟机
 
 2.可以设置windows和centos的共享文件夹
 
-![](E:\learning\LINUXLearning\IMAGES\8_2.png)
+![](.\IMAGES\8_2.png)
 
 ##### vmtools安装：
 
@@ -286,11 +286,11 @@ vmtools:让我们在windows下更好的管理vm虚拟机
 
 指令安装
 
-![](E:\learning\LINUXLearning\IMAGES\8_3.png)
+![](.\IMAGES\8_3.png)
 
 然后一路回车就行
 
-![](E:\learning\LINUXLearning\IMAGES\8_4.png)
+![](.\IMAGES\8_4.png)
 
 安装完后进行重启
 
@@ -300,11 +300,11 @@ vmtools:让我们在windows下更好的管理vm虚拟机
 
 ##### 共享文件夹：
 
-![](E:\learning\LINUXLearning\IMAGES\8_5.png)
+![](.\IMAGES\8_5.png)
 
 共享文件夹在Linux中的位置
 
-![](E:\learning\LINUXLearning\IMAGES\8_6.png)
+![](.\IMAGES\8_6.png)
 
 
 
@@ -316,19 +316,19 @@ vmtools:让我们在windows下更好的管理vm虚拟机
 
 opt：安装软件所用的文件夹
 
-![](E:\learning\LINUXLearning\IMAGES\9_1.png)
+![](.\IMAGES\9_1.png)
 
 
 
-![](E:\learning\LINUXLearning\IMAGES\9_2.png)
+![](.\IMAGES\9_2.png)
 
-![](E:\learning\LINUXLearning\IMAGES\9_3.png)
+![](.\IMAGES\9_3.png)
 
-![](E:\learning\LINUXLearning\IMAGES\9_4.png)
+![](.\IMAGES\9_4.png)
 
-![](E:\learning\LINUXLearning\IMAGES\9_5.png)
+![](.\IMAGES\9_5.png)
 
-![](E:\learning\LINUXLearning\IMAGES\9_6.png)
+![](.\IMAGES\9_6.png)
 
 #### 十.远程登录Linux服务器(xshell5)
 
@@ -336,7 +336,7 @@ opt：安装软件所用的文件夹
 
 远程上传和下载文件软件:XFtp5
 
-![](E:\learning\LINUXLearning\IMAGES\10_1.png)
+![](.\IMAGES\10_1.png)
 
 使用前提：Linux需要开启sshd服务，该服务监听22号端口，一般情况下开启的。（端口：类似人的耳朵，理论上有65536个端口可以开启）端口开启越多，安全性越弱。
 
@@ -344,11 +344,11 @@ opt：安装软件所用的文件夹
 
 1.setup
 
-![](E:\learning\LINUXLearning\IMAGES\10_2.png)
+![](.\IMAGES\10_2.png)
 
 2.选择系统服务，其中标“*”表示开启服务，查找sshd,看是否标星号。
 
-![](E:\learning\LINUXLearning\IMAGES\10_3.png)
+![](.\IMAGES\10_3.png)
 
 安好xshell6后新建一个会话：
 
@@ -356,25 +356,25 @@ opt：安装软件所用的文件夹
 
 未联网：无法得到IP地址
 
-![](E:\learning\LINUXLearning\IMAGES\10_4.png)
+![](.\IMAGES\10_4.png)
 
 需要联网才会分配IP地址
 
 分配IP地址
 
-![](E:\learning\LINUXLearning\IMAGES\10_5.png)
+![](.\IMAGES\10_5.png)
 
 新建会话过程：
 
-![](E:\learning\LINUXLearning\IMAGES\10_6.png)
+![](.\IMAGES\10_6.png)
 
-![](E:\learning\LINUXLearning\IMAGES\10_7.png)
+![](.\IMAGES\10_7.png)
 
 
 
-![](E:\learning\LINUXLearning\IMAGES\10_8.png)
+![](.\IMAGES\10_8.png)
 
-![](E:\learning\LINUXLearning\IMAGES\10_9.png)
+![](.\IMAGES\10_9.png)
 
 
 
@@ -392,7 +392,7 @@ opt：安装软件所用的文件夹
 
 3.touch hello#新建一个名为hello的文件
 
-![](E:\learning\LINUXLearning\IMAGES\10_11.png)
+![](.\IMAGES\10_11.png)
 
 
 
