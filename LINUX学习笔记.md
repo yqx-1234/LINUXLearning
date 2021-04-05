@@ -1805,3 +1805,55 @@ chgrp bandit /home/abc.tx
 
 
 
+#### 三十一.权限管理最佳实践
+
+要求：
+
+police ， bandit
+jack, jerry: 警察
+xh, xq: 土匪
+(1) 创建组
+
+bash> groupadd police
+
+bash> groupadd bandit
+
+(2) 创建用户
+
+bash>useradd -g police jack
+
+bash>useradd -g police jerry
+
+![](.\IMAGES\31_1.png)
+
+![](.\IMAGES\31_2.png)
+
+(3) jack 创建一个文件，自己可以读写，本组人可以读，其它组没人任何权限
+
+![](.\IMAGES\31_3.png)
+
+![](.\IMAGES\31_4.png)
+
+(4) jack 修改该文件，让其它组人可以读, 本组人可以读写
+
+![](.\IMAGES\31_5.png)
+
+(5) xh 投靠 警察，看看是否可以读写.  
+
+1.先用root修改xh的组
+
+2.使用jack给他的家目录/home/jack的所在组一个rx的权限
+
+给予权限后，xh需要重新注销(logout)一下，再到jack目录就可以操作jack的文件了
+
+![](.\IMAGES\31_6.png)
+
+![](.\IMAGES\31_6.png)
+
+![](.\IMAGES\31_8.png)
+
+![](.\IMAGES\31_9.png)
+
+![](.\IMAGES\31_10.png)
+
+![](.\IMAGES\31_11.png)
