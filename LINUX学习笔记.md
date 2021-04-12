@@ -2726,3 +2726,1024 @@ yum install xxx 下载安装
 
 ![](.\IMAGES\38_10.png)
 
+
+
+### LINUX定制篇——JAVAEE定制篇
+
+#### 四十一.搭建JAVAEE开发环境
+
+介绍：
+
+示意图：
+
+![](.\IMAGES\41_1.png)
+
+如果需要在LINUX环境下进行JAVAEE的开发
+
+![](.\IMAGES\41_2.png)
+
+
+
+##### 1.安装JDK
+
+安装步骤
+0) 先将软件通过xftp5 上传到 /opt 下
+
+![](.\IMAGES\41_3.png)
+
+1) 解压缩到 /opt
+
+![](.\IMAGES\41_4.png)
+
+2) 配置环境变量的配置文件vim /etc/profile
+
+![](.\IMAGES\41_8.png)
+
+JAVA_HOME=/opt/jdk1.7.0_79
+
+PATH=/opt/jdk1.7.0_79/bin:$PATH
+
+export JAVA_HOME PATH
+
+完全一致，多一个空格都不行
+
+3)需要注销用户，环境变量变量才能生效
+
+如果是在3运行级别     logout
+
+![](.\IMAGES\41_10.png)
+
+如果实在5运行级别，看老师操作
+
+![](.\IMAGES\41_7.png)
+
+**测试是否安装成功**
+编写一个简单的Hello.java 输出"hello,world!"  
+
+![](.\IMAGES\41_12.png)
+
+![](.\IMAGES\41_11.png)
+
+![](.\IMAGES\41_13.png)
+
+
+
+##### 2.安装tomcat
+
+步骤 :
+1) 解压缩到/opt
+
+![](.\IMAGES\41_14.png)
+
+2)启动tomcat ./startup.sh
+
+先进入到tomcat的bin目录
+
+![](.\IMAGES\41_15.png)
+
+打开startup.sh
+
+![](.\IMAGES\41_16.png)
+
+![](.\IMAGES\41_17.png)
+
+3) 开放端口 vim /etc/sysconfig/iptables,这样外网才能访问到此服务器
+
+![](.\IMAGES\41_1.png)
+
+![](.\IMAGES\41_18.png)
+
+![](.\IMAGES\41_19.png)
+
+![](.\IMAGES\41_20.png)
+
+重启防火墙
+
+![](.\IMAGES\41_22.png)
+
+测试是否安装成功：
+在windows、 Linux 下 访问 http://linuxip:8080  
+
+![](.\IMAGES\41_23.png)
+
+
+
+##### 3.Eclipse的安装
+
+步骤 :
+1) 解压缩到/opt
+
+![](.\IMAGES\41_24.png)
+
+![](.\IMAGES\41_25.png)
+
+![](.\IMAGES\41_26.png)
+
+2) 启动eclipse，配置jre和server
+
+启动方式1：手动创建一个快捷方式，双击打开
+
+启动方式2：进入到eclipse解压后的文件夹，然后执行 ./eclipse即可
+
+![](.\IMAGES\41_28.png)
+
+![](.\IMAGES\41_27.png)
+
+4) 编写jsp 页面,并测试成功!  
+
+![](.\IMAGES\41_29.png)
+
+![](.\IMAGES\41_30.png)
+
+![](.\IMAGES\41_31.png)
+
+![](.\IMAGES\41_32.png)
+
+![](.\IMAGES\41_37.png)
+
+
+
+![](.\IMAGES\41_38.png)
+
+![](.\IMAGES\41_33.png)
+
+![](.\IMAGES\41_35.png)
+
+![](.\IMAGES\41_36.png)
+
+
+
+##### 4.mysql的安装与配置
+
+[说明: 因为mysql安装时间很长，所以在授课时，可以考虑最先安装mysql]
+相关的安装软件在课件
+注意: 先删除一下Mysql 相关的软件.
+
+见文档
+
+![](.\IMAGES\41_39.png)
+
+
+
+### LINUX定制篇——大数据定制篇
+
+#### 四十二.Shell快速入门
+
+**为什么要学习Shell编程**  
+
+1) Linux运维工程师在进行服务器集群管理时，需要编写Shell程序来进行服务器管理。
+2) 对于JavaEE和Python程序员来说，工作的需要，你的老大会要求你编写一些Shell脚本
+进行程序或者是服务器的维护，比如编写一个定时备份数据库的脚本。
+3) 对于大数据程序员来说，需要编写Shell程序来管理集群。  
+
+##### 1.Shell是什么 
+
+Shell是一个命令行解释器，它为用户提供了一个向Linux内核发送请求以便运行程序的界面系统级程序，用户可以用Shell来启动、挂起、停止甚至是编写一些程序。
+
+![](.\IMAGES\42_1.png)  
+
+
+
+##### 2.Shell编程快速入门 
+
+**脚本格式要求**
+1) 脚本以#!/bin/bash开头(用来确定脚本用哪个编辑器解析)
+2) 脚本需要有可执行权限（有x权限）
+
+eg:**编写第一个Shell脚本**
+
+![](.\IMAGES\42_4.png)
+
+![](.\IMAGES\42_3.png)
+
+• 需求说明
+创建一个Shell脚本，输出hello world!
+脚本的常用执行方式
+• 方式1(输入脚本的绝对路径或相对路径)
+1)首先要赋予helloworld.sh 脚本的+x权限
+
+![](.\IMAGES\42_5.png)
+
+2)执行脚本
+
+![](.\IMAGES\42_6.png)
+
+• 方式2(sh+脚本)，不推荐
+说明： 不用赋予脚本+x权限，直接执行即可。
+
+![](.\IMAGES\42_7.png)
+
+
+
+#### 四十三.Shell变量
+
+##### 1.Shell的变量的介绍
+
+1） Linux Shell中的变量分为，**系统变量**和**用户自定义变量**。
+2）系统变量： $HOME、 $PWD、 $SHELL、 $USER等等
+比如： echo $HOME 等等.
+
+![](.\IMAGES\43_1.png)
+
+![](.\IMAGES\43_2.png)
+
+3）显示当前shell中所有变量： set  
+
+![](.\IMAGES\43_3.png)
+
+##### 2.shell变量的定义
+
+• 基本语法
+1)定义变量：变量=值
+2)撤销变量： unset 变量
+3) 声明静态变量： readonly变量，注意：不能unset
+
+
+
+##### • 快速入门
+
+案例1： 定义变量A
+
+案例2： 撤销变量A
+
+![](.\IMAGES\43_5.png)
+
+![](.\IMAGES\43_4.png)
+
+案例3： 声明静态的变量B=2，不能unset
+
+![](.\IMAGES\43_6.png)
+
+![](.\IMAGES\43_7.png)
+
+
+
+![](.\IMAGES\43_8.png)
+
+案例4： 可把变量提升为全局环境变量，可供其他shell程序使用  [一会讲解]
+
+
+
+##### • 定义变量的规则
+
+1) 变量名称可以由字母、数字和下划线组成，但是不能以数字开头。
+
+![](.\IMAGES\43_9.png)
+
+![](.\IMAGES\43_10.png)
+
+2) **等号两侧不能有空格**
+
+![](.\IMAGES\43_11.png)
+
+![](.\IMAGES\43_12.png)
+
+
+
+3) 变量名称一般习惯为大写
+
+
+
+
+
+##### • 将命令的返回值赋给变量(重点)
+
+1）
+
+```
+ A=`ls -la `
+```
+
+反引号，运行里面的命令，并把结果返回给变量A
+
+![](.\IMAGES\43_15.png)
+
+![](.\IMAGES\43_14.png)
+
+2） A=$(ls -la) 等价于反引号  
+
+![](.\IMAGES\43_17.png)
+
+![](.\IMAGES\43_16.png)
+
+
+
+##### 3.设置环境变量
+
+![](.\IMAGES\43_18.png)
+
+**1.基本语法**
+1) export 变量名=变量值 （功能描述：将shell变量输出为环境变量）
+2) source 配置文件 （功能描述：让修改后的配置信息立即生效）
+3) echo $变量名 （功能描述：查询环境变量的值）
+
+**2.快速入门**
+1) 在/etc/profile文件中定义TOMCAT_HOME环境变量
+
+![](.\IMAGES\43_19.png)
+
+2) 查看环境变量TOMCAT_HOME的值
+
+![](.\IMAGES\43_20.png)
+
+3) 在另外一个shell程序中使用 TOMCAT_HOME
+注意：在输出JAVA_HOME 环境变量前，需要让其生效
+source /etc/profile
+位置参数变量  
+
+![](.\IMAGES\43_21.png)
+
+![](.\IMAGES\43_22.png)
+
+##### 4.位置参数变量
+
+**介绍：**
+
+当我们执行一个shell脚本时，如果希望获取到命令行的参数信息，就可以使用到位置参数变量，比如 ： ./myshell.sh 100 200 , 这个就是一个执行shell的命令行，可以在myshell 脚本中获取到参数信息
+**基本语法**
+$n （功能描述： n为数字， $0代表命令本身， $1-$9代表第一到第九个参数，十以上的参数，十以上的参
+数需要用大括号包含，如${10}）
+$* （功能描述：这个变量代表命令行中所有的参数， $*把所有的参数看成一个整体）
+$@（功能描述：这个变量也代表命令行中所有的参数， 不过$@把每个参数区分对待）
+$#（功能描述：这个变量代表命令行中所有参数的个数）
+
+eg:案例：编写一个shell脚本 positionPara.sh ， 在脚本中获取到命令行的各个参数信息。
+
+  ![](.\IMAGES\43_24.png)
+
+![](.\IMAGES\43_23.png)
+
+
+
+##### 5.预定义变量
+
+**基本介绍**
+就是shell设计者事先已经定义好的变量，可以直接在shell脚本中使用
+**基本语法**
+
+$$ （功能描述：当前进程的进程号（PID））
+$! （功能描述：后台运行的最后一个进程的进程号（PID））
+$？ （功能描述：最后一次执行的命令的返回状态。如果这个变量的值为0，证明上一个命令正
+确执行；如果这个变量的值为非0（具体是哪个数，由命令自己来决定），则证明上一个命令执行不正
+确了。）
+
+eg:应用实例
+在一个shell脚本中简单使用一下预定义变量
+
+![](.\IMAGES\43_26.png)
+
+![](.\IMAGES\43_25.png)
+
+
+
+#### 四十四.Shell运算符
+
+基本介绍
+学习如何在shell中进行各种运算操作。
+
+##### 1.基本语法
+
+1) “$((运算式))”或“$[运算式]”
+2) expr m + n
+注意expr运算符间要有空格
+3) expr m - n
+4) expr \\*, /, % 乘，除，取余
+
+eg:
+
+案例1： 计算（2+3） X4的值
+
+1) $((运算式))
+
+![](.\IMAGES\44_2.png)
+
+![](.\IMAGES\44_1.png)
+
+
+
+2.$[运算式]
+
+![](.\IMAGES\44_4.png)
+
+![](.\IMAGES\44_3.png)
+
+3.expr
+
+![](.\IMAGES\44_5.png)
+
+![](.\IMAGES\44_6.png)
+
+案例2：请求出命令行的两个参数[整数]的和
+
+![](.\IMAGES\44_8.png)
+
+![](.\IMAGES\44_7.png)
+
+
+
+#### 四十五.Shell条件判断
+
+##### 1. **基本语法**
+
+```
+[ condition ]（**注意condition前后要有空格**）
+#非空返回true，可使用$?验证（0为true， >1为false）
+```
+
+
+
+##### 2.应用实例
+
+eg:
+
+[ atguigu ]                                                           返回**true**
+[]                                                                          返回**false**
+[condition] && echo OK || echo notok        条件满足，执行后面的语句
+
+##### 3.常用判断条件
+
+**1) 两个整数的比较**
+
+```
+= 字符串比较
+-lt 小于
+-le 小于等于
+-eq 等于
+-gt 大于
+-ge 大于等于
+-ne 不等于
+```
+
+**2) 按照文件权限进行判断**
+
+```
+-r 有读的权限
+-w 有写的权限
+-x 有执行的权限
+```
+
+**3)按照文件类型进行判断**
+
+```
+-f 文件存在并且是一个常规的文件
+-e 文件存在
+-d 文件存在并是一个目录  
+```
+
+**4) 应用实例**
+案例1： "ok"是否等于"ok"
+判断语句：
+
+![](.\IMAGES\45_2.png)
+
+![](.\IMAGES\45_1.png)
+
+案例2： 23是否大于等于22
+判断语句：
+
+![](.\IMAGES\45_4.png)
+
+![](.\IMAGES\45_3.png)
+
+案例3： /root/shell/aaa.txt 目录中的文件是否存在  
+
+判断语句：
+
+![](.\IMAGES\45_6.png)
+
+![](.\IMAGES\45_5.png)
+
+
+
+#### 四十六.流程控制
+
+##### 1.if 判断
+
+**1.基本语法**
+
+```
+if [ 条件判断式 ];then
+        程序
+fi
+```
+
+或者
+
+```
+if [ 条件判断式 ]
+then
+         程序
+elif [ 条件判断式 ]
+then
+        程序
+fi
+```
+
+注意事项：（1） [ 条件判断式 ]，中括号和条件判断式之间必须有空格 (2) 推荐使用第二种方式
+
+
+
+**eg:**
+
+案例：请编写一个shell程序，如果输入的参数，大于等于60，则输出 "及格了"，如果小于
+60,则输出 "不及格"  
+
+![](.\IMAGES\45_8.png)
+
+![](.\IMAGES\45_7.png)
+
+
+
+##### 2.case语句
+
+**1.基本语法**
+
+```
+case $变量名 in
+"值1"）
+如果变量的值等于值1，则执行程序1
+;;
+"值2"）
+如果变量的值等于值2，则执行程序2
+;;
+…省略其他分支…
+*）
+如果变量的值都不是以上的值，则执行此程序
+;;
+esac
+```
+
+**2.应用实例**
+案例1 ：当命令行参数是 1 时，输出 "周一", 是2 时，就输出"周二"， 其它情况输出 "other"  
+
+![](.\IMAGES\46_2.png)
+
+![](.\IMAGES\46_1.png)
+
+
+
+##### 3.for循环语句
+
+**1.基本语法1**
+
+```
+for 变量 in 值1 值2 值3…
+do
+	程序
+done
+```
+
+**应用实例**
+案例1 ：打印命令行输入的参数  {会使用到$* $@} [这里可以看出$* 和 $@ 的区别]  
+
+![](.\IMAGES\46_5.png)
+
+![](.\IMAGES\46_6.png)
+
+**2.基本语法2**
+
+```
+for (( 初始值;循环控制条件;变量变化 ))
+do
+	程序
+done
+```
+
+• 应用实例
+案例1 ： 从1加到100的值输出显示
+
+![](.\IMAGES\46_7.png)
+
+
+
+![](.\IMAGES\46_8.png)
+
+
+
+##### 4.while循环
+
+**1.基本语法1**
+
+```
+while [ 条件判断式 ]
+do
+	程序
+done  
+```
+
+**2.应用实例**
+案例1 ：从命令行输入一个数n，统计从 1+..+ n 的值是多少？  
+
+![](.\IMAGES\46_9.png)
+
+ ![](.\IMAGES\46_10.png)
+
+
+
+#### 四十七.Shell读取控制台输入
+
+read读取控制台输入  
+
+##### 1.基本语法
+
+```
+read(选项)(参数)
+选项：
+-p：指定读取值时的提示符；
+-t：指定读取值时等待的时间（秒） ，如果没有在指定的时间内输入，就不再等待了。。
+参数
+变量：指定读取值的变量名
+```
+
+##### 2.应用实例
+
+案例1： 读取控制台输入一个num值
+
+![](.\IMAGES\46_13.png)
+
+![](.\IMAGES\46_11.png)
+
+案例2： 读取控制台输入一个num值，在10秒内输入。  
+
+![](.\IMAGES\46_12.png)
+
+![](.\IMAGES\46_11.png)
+
+
+
+#### 四十八.Shell函数
+
+##### 1.Shell函数简介：
+
+shell编程和其它编程语言一样，有系统函数，也可以自定义函数。系统函数中，
+我们这里就介绍两个。  
+
+##### 2.系统函数
+
+**1.basename基本语法**
+
+```
+功能：返回完整路径最后 / 的部分，常用于获取文件名
+basename [pathname] [suffix]
+basename [string] [suffix] （功能描述： basename命令会删掉所有的前缀包括最后一个（‘/’）
+字符，然后将字符串显示出来。
+选项：
+suffix为后缀，如果suffix被指定了， basename会将pathname或string中的suffix去掉。
+```
+
+**2.应用实例**
+案例1：请返回 /home/aaa/test.txt 的 "test.txt" 部分
+
+![](.\IMAGES\48_2.png)
+
+**3.dirname基本语法**
+
+```
+dirname基本语法
+功能：返回完整路径最后 / 的前面的部分，常用于返回路径部分
+dirname 文件绝对路径 （功能描述：从给定的包含绝对路径的文件名中去除文件名（非目录的部分），
+然后返回剩下的路径（目录的部分））
+```
+
+**4.应用实例**
+案例1：请返回 /home/aaa/test.txt 的 /home/aaa  
+
+![](.\IMAGES\48_3.png)
+
+
+
+##### 3.自定义函数
+
+**1.基本语法**
+
+```
+[ function ] funname[()]
+{
+	Action;
+	[return int;]
+} 
+调用直接写函数名： funname [值]
+```
+
+**2.应用实例：**
+
+案例1： 计算输入两个参数的和(read)， getSum  
+
+![](.\IMAGES\48_5.png)
+
+![](.\IMAGES\48_4.png)
+
+
+
+#### 四十九.Shell编程综合案例
+
+##### 1.需求分析
+
+```
+1) 每天凌晨 2:10 备份 数据库 atguiguDB 到 /data/backup/db
+2) 备份开始和备份结束能够给出相应的提示信息
+3) 备份后的文件要求以备份时间为文件名，并打包成 .tar.gz 的形式，比如：
+			2018-03-12_230201.tar.gz
+4) 在备份的同时，检查是否有10天前备份的数据库文件，如果有就将其删除。
+```
+
+![](.\IMAGES\48_6.png)
+
+##### 2.具体步骤
+
+编写一个shell脚本：
+
+思路分析：
+
+![](.\IMAGES\48_7.png)
+
+![](.\IMAGES\49_6.png)
+
+
+
+### LINUX定制篇——Python定制篇
+
+#### 五十.Ubuntu的安装与配置
+
+##### 1.介绍：
+
+​        Ubuntu（友帮拓、优般图、乌班图）是一个以桌面应用为主的开源GNU/Linux操作系统，Ubuntu 是基于 GNU/Linux，支持x86、 amd64（即x64）和ppc架构，由全球化的专业开发团队（Canonical Ltd）打造的。专业的Python开发者一般会选择 Ubuntu 这款Linux系统作为生产平台.
+**温馨提示：**
+​        Ubuntu 和 Centos 都是基于 GNU/Linux 内核的，因此基本使用和Centos是几乎一样的，它们的各种指令可以通用，同学们在学习和使用Ubuntu的过程中，会发现各种操作指令在前面学习CentOS都使用过。只是界面和预安装的软件有所差别。
+Ubuntu下载地址： http://cn.ubuntu.com/download/  
+
+##### 2.安装Ubuntu  
+
+![](.\IMAGES\49_7.png)
+
+
+
+##### **3.设置Ubuntu支持中文** 
+
+默认安装的ubuntu 中只有英文语言，因此是不能显示汉字的。要正确显示汉字，需要安装中文语言包。
+**安装中文支持步骤：**
+1.单击左侧图标栏打开 System Settings（系统设置）菜单，点击打开 Language Support（语言支持）选项卡。
+2.点击 Install / Remove Languages，在弹出的选项卡中下拉找到Chinese(Simplified)，即中文简体，在后面的选项框中打勾。然后点击Apply Changes 提交，系统会自动联网下载中文语言包。（保证ubuntu 是联网的）。
+3.这时“汉语（中国）”在最后一位因为当前第一位是” English”，所以默认显示都是英文。我们如果希望默认显示用中文， 则应该将“汉语（中国）”设置为第一位。设置方法是拖动，鼠标单击“汉语（中国）”，当底色变化（表示选中了）后，按住鼠标左键不松手，向上拖动放置到第一位。
+4.设置后不会即刻生效，需要下一次登录时才会生效。  
+
+![](.\IMAGES\50_2.png)
+
+ ![](.\IMAGES\50_3.png)
+
+
+
+#### 五十一.Ubuntu的root用户
+
+##### 1.介绍
+
+​        安装ubuntu成功后，都是普通用户权限，并没有最高root权限，如果需要使用root权限的时候，通常都会在命令前面加上 sudo 。有的时候感觉很麻烦。
+​        我们一般使用su命令来直接切换到root用户的，但是如果没有给root设置初始密码，就会抛出su:Authentication failure 这样的问题。所以，我们只要给root用户设置一个初始密码就好了。  
+
+##### 2.给root用户设置密码并使用
+
+1) 输入 sudo passwd 命令，输入一般用户密码并设定root用户密码。
+2) 设定root密码成功后，输入 su 命令，并输入刚才设定的root密码，就可以切换成root了。提示符$代表一般用户，提示符#代表root用户。
+3) 输入 exit 命令，退出root并返回一般用户
+4) 以后就可以使用root用户了  
+
+![](.\IMAGES\50_5.png)
+
+
+
+#### 五十二.Ubuntu下开发Python
+
+##### 1.说明
+
+安装好Ubuntu后，默认就已经安装好Python的开发环境[Python2.7 和 Python3.5]。  
+
+![](.\IMAGES\50_6.png)
+
+**2.应用案例在Ubuntu下开发一个Python程序**  
+
+**安装vim**
+
+提示：如果Ubuntu没有vim，我们可以根据提示信息安装一个vim
+
+sudo apt install vim
+
+![](.\IMAGES\51_2.png)
+
+1) vim hello.py [编写hello.py]
+
+![](.\IMAGES\51_3.png)
+
+2) python3 hello.py [运行hello.py]  
+
+![](.\IMAGES\51_4.png)
+
+
+
+#### 五十三.apt软件管理
+
+##### 1.apt介绍  
+
+​        apt是Advanced Packaging Tool的简称，是一款安装包管理工具。在Ubuntu下，我们可以使用apt命令可用于软件包的安装、删除、清理等，类似于Windows中的软件管理工具。
+unbuntu 软件管理的原理示意图：  
+
+![](.\IMAGES\52_2.png)
+
+
+
+##### 2.Ubuntu软件操作的相关命令  
+
+```
+sudo apt-get update 更新源//重点
+sudo apt-get install package 安装包//重点
+sudo apt-get remove package 删除包//重点
+
+sudo apt-cache search package 搜索软件包
+sudo apt-cache show package 获取包的相关信息，如说明、大小、版本等//重点
+sudo apt-get install package --reinstall 重新安装包
+
+sudo apt-get -f install 修复安装
+sudo apt-get remove package --purge 删除包，包括配置文件等
+sudo apt-get build-dep package 安装相关的编译环境
+
+sudo apt-get upgrade 更新已安装的包
+sudo apt-get dist-upgrade 升级系统
+sudo apt-cache depends package 了解使用该包依赖那些包
+sudo apt-cache rdepends package 查看该包被哪些包依赖
+sudo apt-get source package 下载该包的源代码//重点
+注：root用户sudo可以不输入
+```
+
+
+
+##### 3.应用案例
+
+**1.更新Ubuntu软件下载地址**  
+
+1）原理介绍  ：
+
+![](.\IMAGES\52_2.png)
+
+
+
+2）寻找国内镜像源  
+
+https://mirrors.tuna.tsinghua.edu.cn/
+所谓的镜像源：可以理解为提供下载软件的地方，比如Android手机上可以下载软件的安卓市场； iOS手机上可以下载软件的AppStore。
+
+![](.\IMAGES\52_3.png)
+
+
+
+3)寻找国内镜像源  
+
+![](.\IMAGES\52_4.png)
+
+
+
+4)备份Ubuntu默认的源地址 
+
+```
+sudo cp /etc/apt/sources.list /etc/apt/sources.list.backup
+```
+
+![](.\IMAGES\52_5.png)
+
+
+
+5)更新源服务器列表  
+
+![](.\IMAGES\52_6.png)
+
+![](.\IMAGES\52_7.png)
+
+
+
+6)更新源  
+
+```
+更新源地址： sudo apt-get update
+```
+
+![](.\IMAGES\52_8.png)
+
+
+
+**7)实操步骤**
+
+1.
+
+![](.\IMAGES\52_9.png)
+
+2.
+
+![](.\IMAGES\52_10.png)
+
+3.
+
+![](.\IMAGES\52_11.png)
+
+4.更新源服务器列表
+
+![](.\IMAGES\52_12.png)
+
+![](.\IMAGES\52_13.png)
+
+5.更新源 
+
+![](.\IMAGES\52_15.png)
+
+完成
+
+![](.\IMAGES\52_16.png)
+
+**2.Ubuntu软件安装，卸载的最佳实践**  
+
+案例说明：使用apt完成安装和卸载vim 软件，并查询 vim 软件的信息：
+sudo apt-get remove vim
+
+![](.\IMAGES\52_17.png)
+
+![](.\IMAGES\52_18.png)
+
+sudo apt-get install vim
+
+![](.\IMAGES\52_19.png)
+
+sudo apt-cache show vim  
+
+![](.\IMAGES\52_20.png)
+
+
+
+#### 五十三.使用ssh远程登录Ubuntu  
+
+##### 1.ssh介绍
+
+​        SSH为Secure Shell的缩写，由 IETF 的网络工作小组（Network Working Group）所制定；SSH 为建立在应用层和传输层基础上的安全协议。
+​        SSH是目前较可靠，专为远程登录会话和其他网络服务提供安全性的协议。常用于远程登录，以及用户之间进行资料拷贝。几乎所有 UNIX 平台—包括 HP-UX、 Linux、 AIX、Solaris、 Digital UNIX、 Irix，以及其他平台，都可运行SSH。
+​        使用SSH服务，需要安装相应的服务器和客户端。客户端和服务器的关系：如果， A机器想被B机器远程控制，那么， A机器需要安装SSH服务器， B机器需要安装SSH客户端。
+
+**和CentOS不一样， Ubuntu默认没有安装SSHD服务，因此，我们不能进行远程登录。** 
+
+原理示意图：  
+
+![](.\IMAGES\52_24.png)
+
+##### 2.安装SSH和启用
+
+```
+sudo apt-get install openssh-server
+执行上面指令后， 在当前这台Linux上就安装了SSH服务端和客户端。
+service sshd restart
+执行上面的指令，就启动了 sshd 服务。会监听端口22  
+```
+
+![](.\IMAGES\53_1.png)
+
+![](.\IMAGES\53_2.png)
+
+![](.\IMAGES\53_3.png)
+
+![](.\IMAGES\53_4.png)
+
+##### 3.在Windows使用XShell5/XFTP5登录Ubuntu  
+
+前面我们已经安装了XShell5，直接使用即可。
+
+![](.\IMAGES\53_5.png)
+
+注意：使用atguigu 用户登录，需要的时候再 su - 切换成root用户  
+
+![](.\IMAGES\52_21.png)
+
+##### 4.从linux系统客户机远程登陆linux系统服务机  
+
+**首先，我们需要在Linux的系统客户机上也安装openssh-server**
+
+```
+• 基本语法：
+ssh 用户名@IP
+例如： ssh atguigu@192.168.188.130
+使用ssh访问，如访问出现错误。可查看是否有该文件 ～/.ssh/known_ssh 尝试删除该文件
+解决。
+• 登出
+登出命令： exit或者logout
+```
+
+
+
+## 结束
+
+开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心开心
+
+### 老师送给大家的话：
+
+#### 卖油翁和老黄牛  
+
+![](.\IMAGES\52_22.png)
+
+![](.\IMAGES\52_23.png)
+
+# 革命尚未成功，同志仍需努力！
+
+## 加油呀！杨清旭
